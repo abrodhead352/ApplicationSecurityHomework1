@@ -3,9 +3,9 @@
 
 int check_password(char *password) {
     int flag = 0;
-    char buffer[20];    
-    strcpy(buffer, password);
-    
+    char buffer[20];
+    if(strlen(password) > 20) return flag; 
+    strcpy(buffer, password); 
     if (strcmp(buffer, "mypass") == 0){
         flag = 1;
     }
@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
         }
         
         if (i >= 1000) {
-            printf("Could not smash the stack!");
+            printf("Could not smash the stack!\n");
             break;
         }
         
